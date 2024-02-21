@@ -1,0 +1,11 @@
+package com.example.fortuna;
+
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+class Application {
+
+    public static void main(String[] args) {
+
+    }
+}
