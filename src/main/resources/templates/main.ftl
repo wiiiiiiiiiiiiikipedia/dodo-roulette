@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script type='text/javascript' src="/script.js"></script>
 </head>
 <body>
     <form class="text-center" method="post" action="/fortuna/choose-winner" modelAttribute="participantForm">
@@ -16,8 +17,8 @@
 
     <#if prize??>
         <p>Поздравляем, ${participant.get().getName()} выиграл приз!</p>
-        <p>Приз: ${prize.get().getName()}</p>
-        <img src="${prize.get().getPhotoUrl()}">
+        <button onclick="startRoulette('${prize.get().getName()}', '${prize.get().getPhotoUrl()}')">Узнать какой приз был выигран</button>
+        <div id="result"></div>
     </#if>
 
     <#if error??>
@@ -25,9 +26,5 @@
         <p>Возникла ошибка: ${error}</p>
     </#if>
     <br>
-    <h3>Список победителей:</h3>
-    <#list winners?keys as winnerName>
-        ${winnerName}: ${winners[winnerName]} <br>
-    </#list>
 </body>
 </html>

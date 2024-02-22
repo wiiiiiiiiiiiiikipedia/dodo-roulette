@@ -50,8 +50,7 @@ public class FortunaController {
             prizeToParticipant = fortunaService.chooseWinner(participantForm);
         } catch (NoAvailablePrizesException | AlreadyWonException e) {
             return new ModelAndView("main")
-                    .addObject("error", e.getLocalizedMessage())
-                    .addObject("winners", fortunaService.allWinners());
+                    .addObject("error", e.getLocalizedMessage());
         }
 
         return new ModelAndView("main")
@@ -62,7 +61,12 @@ public class FortunaController {
                 .addObject(
                     "participant",
                     participantService.findById(prizeToParticipant.getParticipantId())
-                )
+                );
+    }
+
+    @GetMapping("winners")
+    public ModelAndView getAllWinners() {
+        return new ModelAndView("winners")
                 .addObject("winners", fortunaService.allWinners());
     }
 }
