@@ -1,6 +1,7 @@
 package com.example.fortuna.db.entity;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -15,7 +16,7 @@ public class Participant {
     private String name;
 
     @Column(name="created_at")
-    private Date createdAt;
+    private LocalDate createdAt;
 
     public Long getId() {
         return id;
@@ -30,11 +31,11 @@ public class Participant {
         return this;
     }
 
-    public Date getCreatedAt() {
+    public LocalDate getCreatedAt() {
         return createdAt;
     }
 
-    public Participant setCreatedAt(Date createdAt) {
+    public Participant setCreatedAt(LocalDate createdAt) {
         this.createdAt = createdAt;
         return this;
     }

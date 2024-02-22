@@ -1,7 +1,7 @@
 package com.example.fortuna.db.entity;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.time.LocalDate;
 
 @Entity
 @Table(name="prize_to_participant")
@@ -12,50 +12,41 @@ public class PrizeToParticipant {
     private Long id;
 
     @Column(name="prize_id")
-    private String prize_id;
+    private Long prizeId;
 
     @Column(name="participant_id")
-    private String participant_id;
+    private Long participantId;
 
     @Column(name="created_at")
-    private Date createdAt;
-
-
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name="prize_id", insertable = false, updatable = false)
-    private Prize prize;
-
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name="participant_id", insertable = false, updatable = false)
-    private Participant participant;
+    private LocalDate createdAt;
 
     public Long getId() {
         return id;
     }
 
-    public String getPrizeId() {
-        return prize_id;
+    public Long getPrizeId() {
+        return prizeId;
     }
 
-    public PrizeToParticipant setPrizeId(String prize_id) {
-        this.prize_id = prize_id;
+    public PrizeToParticipant setPrizeId(Long prizeId) {
+        this.prizeId = prizeId;
         return this;
     }
 
-    public String getParticipantId() {
-        return participant_id;
+    public Long getParticipantId() {
+        return participantId;
     }
 
-    public PrizeToParticipant setParticipantId(String participant_id) {
-        this.participant_id = participant_id;
+    public PrizeToParticipant setParticipantId(Long participantId) {
+        this.participantId = participantId;
         return this;
     }
 
-    public Date getCreatedAt() {
+    public LocalDate getCreatedAt() {
         return createdAt;
     }
 
-    public PrizeToParticipant setCreatedAt(Date createdAt) {
+    public PrizeToParticipant setCreatedAt(LocalDate createdAt) {
         this.createdAt = createdAt;
         return this;
     }
