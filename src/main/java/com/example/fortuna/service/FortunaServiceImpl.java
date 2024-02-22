@@ -35,7 +35,7 @@ public class FortunaServiceImpl implements FortunaService {
     public PrizeToParticipant chooseWinner(ParticipantForm participantForm)
             throws NoAvailablePrizesException, AlreadyWonException {
 
-        if(prizeService.findAll().size()==20)
+        if(prizeToParticipantService.findAll().size()==20)
             throw new NoAvailablePrizesException("Все призы закончились!");
 
         if(participantService.existsByName(participantForm.getName()))
