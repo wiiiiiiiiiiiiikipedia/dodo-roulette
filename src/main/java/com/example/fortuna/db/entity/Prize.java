@@ -13,8 +13,8 @@ public class Prize {
     @Column(name="name")
     private String name;
 
-    @Column(name="count")
-    private String count;
+    @Column(name="photo_url")
+    private String photoUrl;
 
     @Column(name="price")
     private String price;
@@ -32,12 +32,12 @@ public class Prize {
         return this;
     }
 
-    public String getCount() {
-        return count;
+    public String getPhotoUrl() {
+        return photoUrl;
     }
 
-    public Prize setCount(String count) {
-        this.count = count;
+    public Prize setPhotoUrl(String photoUrl) {
+        this.photoUrl = photoUrl;
         return this;
     }
 
