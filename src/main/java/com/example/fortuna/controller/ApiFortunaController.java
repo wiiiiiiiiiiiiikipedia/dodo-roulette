@@ -1,6 +1,8 @@
 package com.example.fortuna.controller;
 
 import com.example.fortuna.db.dto.PrizeToParticipantDto;
+import com.example.fortuna.db.dto.WinnerDto;
+import com.example.fortuna.db.entity.Prize;
 import com.example.fortuna.db.entity.PrizeToParticipant;
 import com.example.fortuna.exception.AlreadyWonException;
 import com.example.fortuna.exception.NoAvailablePrizesException;
@@ -38,9 +40,9 @@ public class ApiFortunaController {
         return fortunaService.allWinners();
     }
 
-    @PostMapping("choose-winner")
+    @PostMapping("choose-winner/dto")
     @ResponseBody
-    public PrizeToParticipantDto getWinner(@RequestParam(value = "name") String participantName) {
+    public PrizeToParticipantDto getWinnerDto(@RequestParam(value = "name") String participantName) {
 
         PrizeToParticipantDto prizeToParticipantDto = new PrizeToParticipantDto();
         PrizeToParticipant prizeToParticipant;
@@ -58,6 +60,30 @@ public class ApiFortunaController {
                 .setParticipant(participantService.findById(prizeToParticipant.getParticipantId()).get());
 
         return prizeToParticipantDto;
+    }
+
+    @PostMapping("choose-winner")
+    @ResponseBody
+    public WinnerDto getWinner(@RequestParam(value = "name") String participantName) {
+
+        PrizeToParticipant prizeToParticipant;
+        WinnerDto winnerDto = new WinnerDto();
+
+        try {
+            prizeToParticipant = fortunaService.chooseWinner(participantName);
+
+        } catch (NoAvailablePrizesException | AlreadyWonException e) {
+            winnerDto.setError(e.getMessage());
+            return winnerDto;
+        }
+
+        Prize prize = prizeService.findById(prizeToParticipant.getPrizeId()).get();
+
+        winnerDto.setPrizeNumber(prize.getId());
+        winnerDto.setImageURL(prize.getPhotoUrl());
+        winnerDto.setWinnerName(participantName);
+
+        return winnerDto;
     }
 
     @DeleteMapping("clear")
