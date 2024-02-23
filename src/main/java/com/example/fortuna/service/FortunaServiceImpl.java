@@ -69,4 +69,16 @@ public class FortunaServiceImpl implements FortunaService {
                     winner -> allPrize.stream().filter(prize -> prize.getId() == winner.getPrizeId()).findFirst().get().getName())
                 );
     }
+
+    @Override
+    public void deleteWinnersAndParticipants() {
+
+        for (PrizeToParticipant p : prizeToParticipantService.findAll()) {
+            prizeToParticipantService.delete(p);
+        }
+
+        for (Participant p : participantService.findAll()) {
+            participantService.delete(p);
+        }
+    }
 }

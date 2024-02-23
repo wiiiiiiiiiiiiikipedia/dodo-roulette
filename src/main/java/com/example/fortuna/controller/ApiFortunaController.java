@@ -59,4 +59,11 @@ public class ApiFortunaController {
 
         return prizeToParticipantDto;
     }
+
+    @DeleteMapping("clear")
+    public String deleteAll() {
+        fortunaService.deleteWinnersAndParticipants();
+        return "Все победители и все участники удалены";
+    }
+
 }

@@ -14,4 +14,5 @@ public interface FortunaService {
     PrizeToParticipant chooseWinner(String participantName)
             throws NoAvailablePrizesException, AlreadyWonException;
     Map<String, String> allWinners();
+    void deleteWinnersAndParticipants();
 }
