@@ -48,6 +48,15 @@ public class FortunaServiceImpl implements FortunaService {
     }
 
     @Override
+    public PrizeToParticipant chooseWinner(String participantName)
+        throws NoAvailablePrizesException, AlreadyWonException
+    {
+        ParticipantForm participantForm = new ParticipantForm();
+        participantForm.setName(participantName);
+        return this.chooseWinner(participantForm);
+    }
+
+    @Override
     public Map<String, String> allWinners() {
 
         List<PrizeToParticipant> allPrizeToParticipant = prizeToParticipantService.findAll();

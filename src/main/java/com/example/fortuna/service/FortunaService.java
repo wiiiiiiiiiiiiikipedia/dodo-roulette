@@ -11,5 +11,7 @@ public interface FortunaService {
 
     PrizeToParticipant chooseWinner(ParticipantForm participantForm)
             throws NoAvailablePrizesException, AlreadyWonException;
+    PrizeToParticipant chooseWinner(String participantName)
+            throws NoAvailablePrizesException, AlreadyWonException;
     Map<String, String> allWinners();
 }
