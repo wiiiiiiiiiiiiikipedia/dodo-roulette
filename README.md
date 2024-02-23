@@ -1,70 +1,41 @@
-# Getting Started with Create React App
+### POST http://localhost:8082/api/choose-winner?name=qsds
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+#### response:
+{
+"prize": {
+"id": 8,
+"name": "2 фирменных закуски",
+"photoUrl": "https://downloader.disk.yandex.ru/preview/b9be2537fbc034fe58cecfce0d7d0284ede70dec84e5c86dd3a98441b558e2ed/65d76b1f/HCC5XmGPYzR6okR-VXoxfwyBeot_7N4puaBZmpnN1a1hDMtcIsGM17Kyl9p0Q3lvGibVF7nD1FhP8ROvOGKxzw%3D%3D?uid=0&filename=2%20фирменных%20закуски.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=0&tknv=v2&size=2880x1594",
+"price": "329"
+},
+"participant": {
+"id": 65,
+"name": "qsds",
+"createdAt": "2024-02-23"
+},
+"errors": null
+}
 
-## Available Scripts
+### GET http://localhost:8082/api/winners
 
-In the project directory, you can run:
+#### response:
+{
+"dd": "Дэнвич и напиток",
+"": "Пицца 25 см и напиток",
+"dfd": "Додстер и напиток",
+"sds": "Додстер и напиток",
+"qsds": "2 фирменных закуски",
+"ddd": "Дэнвич и напиток",
+"qwer": "2 фирменных закуски",
+"fff": "Додстер и напиток",
+"смсм": "Додстер и напиток",
+"asa": "2 фирменных закуски",
+"sss": "Дэнвич и напиток",
+"cv": "Додстер и напиток",
+"смсв": "Пицца 25 см и напиток",
+"qwqw": "Пицца 25 см и напиток"
+}
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
